@@ -1,0 +1,43 @@
+https://www.codechef.com/problems/BLONDIE
+
+#include<bits/stdc++.h>
+#define ll long long
+#define f(i, a, b) for (ll i = a; i < b; i++)
+#define vi vector<ll>
+using namespace std;
+void solve(){
+int t;
+cin>>t;
+vi v;
+ll num;
+f(i,0,t){cin>>num;v.push_back(num);}
+vi ps(t);ps[0]=v[0];
+f(i,1,v.size()){
+    //if(i==0&&v[i]==-1){
+  //ps[0]=0;      
+    //}
+ if(v[i]==-1){
+        v[i]=ps[i-1]/i;
+        ps[i]=ps[i-1]+v[i];
+    }
+    
+    else{
+    ps[i]=ps[i-1]+v[i];
+    }
+ 
+ 
+    
+}
+f(i,0,t){cout<<v[i]<<" ";}
+cout<<endl;
+}
+
+int main() {
+int t;
+cin>>t;
+while(t--)
+{
+solve();
+}
+	return 0;
+}
