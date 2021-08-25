@@ -1,0 +1,32 @@
+https://www.spoj.com/problems/CSUMQ/
+
+#include<bits/stdc++.h>
+#define ll long long
+#define f(i, a, b) for (int i = a; i < b; i++)
+#define vi vector<int>
+using namespace std;
+
+void solve(){
+int t;cin>>t;
+vi v(t);
+int num;
+f(i,0,t){cin>>v[i];}
+int q;cin>>q;
+vi ps(t);ps[0]=v[0];
+f(i,1,v.size()){ps[i]=(ps[i-1]+v[i]);}
+while(q--){int a,b;
+cin>>a>>b;
+if(a>0)cout<<ps[b]-ps[a-1]<<endl;
+else if(a==0)cout<<ps[b]<<endl;
+}
+}
+
+int main() {
+int t=1;
+//cin>>t;
+while(t--)
+{
+solve();
+}
+	return 0;
+}
